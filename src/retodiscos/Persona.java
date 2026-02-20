@@ -11,9 +11,10 @@ public class Persona {
         this.apellido = apellido;
         this.dni = dni;
     }
+
     public Persona(String nombre) {
         this.nombre = nombre;
-        
+
     }
 
     public String getNombre() {
