@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Disco {
 
     private static int contador = 0;
-    private Disco propietario;
     private String titulo;
     private String autor;
     private String discografica;
@@ -28,9 +27,7 @@ public class Disco {
         contador++;
     }
     
-    public void setPropietario(Disco propietario) {
-        this.propietario = propietario;
-    }
+    
     public void setAntiguoPropietario(Cliente antiguoPropietario) {
         this.antiguoPropietario = antiguoPropietario;
     }
@@ -69,6 +66,15 @@ public class Disco {
 
     public String getTitulo() {
         return titulo;
+    }
+
+    public static int getContadorDiscos() {
+        return contadorDiscos;
+    }
+    
+    @Override
+    public String toString() {
+        return "titulo=" + titulo + ", autor=" + autor + ", discografica=" + discografica + ", precio=" + precio + ", genero=" + genero + ", numCanciones=" + numCanciones + ", formato=" + formato + ", antiguoPropietario=" + antiguoPropietario + '}';
     }
 
 }

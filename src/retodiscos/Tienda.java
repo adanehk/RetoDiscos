@@ -5,10 +5,19 @@ import java.util.ArrayList;
 public class Tienda {
     private String nombre;
     private String direccion;
+    private double saldo = 0;
     private double beneficio;
-    ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-    ArrayList<Empleado> empleados = new ArrayList<Empleado>(); 
-    ArrayList<Proveedor> proveedores = new ArrayList<Proveedor>();
+   
+    
+    public void addDisco (Disco disco) {
+        main.stock.add(disco);
+    }
+    
+    public void quitarDisco(Disco disco) {
+        main.stock.remove(disco);
+    }
+    
+    
     
     public String getNombre() {
         return nombre;
@@ -33,4 +42,5 @@ public class Tienda {
     public void setBeneficio(double beneficio) {
         this.beneficio = beneficio;
     }
+
 }
