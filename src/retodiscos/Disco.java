@@ -26,6 +26,7 @@ public class Disco {
         this.formato = formato;
         contador++;
     }
+    public Disco(){}
     
     
     public void setAntiguoPropietario(Cliente antiguoPropietario) {

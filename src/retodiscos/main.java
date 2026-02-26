@@ -52,7 +52,6 @@ public class main {
                     System.out.println("Has creado el disco " + nombre + " y lo has añadido al stock");
                     break;
                 case 3:
-                    System.out.println("Actualmente hay " disco);
                     System.out.println("Mostrar");
                     
                     for(int i = 0; i < stock.size(); i++) {
