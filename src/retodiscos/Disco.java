@@ -16,6 +16,7 @@ public class Disco {
     private static int contadorDiscos = 0;
     private Cliente antiguoPropietario;
     private static boolean nuevo;
+    private Empleado empleado;
 
     public Disco(String titulo, String autor, String discografica, double precio, String genero, int numCanciones, String formato) {
         this.titulo = titulo;
@@ -27,6 +28,19 @@ public class Disco {
         this.formato = formato;
         contador++;
     }
+
+    public Disco(String titulo, String autor, String discografica, double precio, String genero, int numCanciones, String formato, Cliente antiguoPropietario, Empleado empleado) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.discografica = discografica;
+        this.precio = precio;
+        this.genero = genero;
+        this.numCanciones = numCanciones;
+        this.formato = formato;
+        this.antiguoPropietario = antiguoPropietario;
+        this.empleado = empleado;
+    }
+    
     public Disco(){}
     
     

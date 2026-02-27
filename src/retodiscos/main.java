@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class main {
 
     static int cont;
-    static ArrayList<Disco> stock = new ArrayList<>();
+    static public ArrayList<Disco> stock = new ArrayList<>();
+    static public ArrayList<Empleado> empleados= new ArrayList<>();
     static Scanner input = new Scanner(System.in);
     
     

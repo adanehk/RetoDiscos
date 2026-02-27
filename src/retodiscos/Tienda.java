@@ -12,8 +12,8 @@ public class Tienda {
     private double beneficio;
     static Scanner entrada = new Scanner(System.in);
     private ArrayList<Cliente> ventas = new ArrayList<>();
-    
-    Disco disco = new Disco();
+
+    Empleado empleado = new Empleado(nombre, direccion, nombre, saldo);
 
     public void addDisco(Disco disco) {
         main.stock.add(disco);
@@ -128,9 +128,10 @@ public class Tienda {
 
 
     System.out.println("Coloca el nombre del disco: ");
-    String identificadorNombre = input.nextLine();
+    input.next();
+    String identificadorNombre = input.next();
     System.out.println("Coloca el autor: ");
-    String identificadorAutor = input.nextLine();
+    String identificadorAutor = input.next();
         
     for (int i = 0; i < stock.size(); i++) {
         if (identificadorNombre.equalsIgnoreCase(stock.get(i).getTitulo())
@@ -145,7 +146,7 @@ public class Tienda {
         ventas.add(new Cliente(correo, isNew, nombre, apellido, dni));
     }
     
-    public void compra (ArrayList<Disco> stock, Scanner input) {
+    public void compra (ArrayList<Disco> stock, ArrayList<Empleado> empleado,Scanner input) {
          System.out.print("Introduce el título: ");
         String titulo = input.nextLine();
 
@@ -168,8 +169,8 @@ public class Tienda {
 
         System.out.print("Introduce el formato (CD, Vinilo, Digital...): ");
         String formato = input.nextLine();
-
-        stock.add(new Disco(titulo, autor, discografica, precio, genero, numCanciones, formato));
+        
+        stock.add(new Disco(titulo, autor, discografica, precio, genero, numCanciones, formato, Empleado.buscarEmpleado("z35r32g", empleado)));
         
         saldo-= precio;
     }
