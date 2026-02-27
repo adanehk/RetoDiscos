@@ -20,9 +20,11 @@ public class main {
         
         int opc;
         System.out.println("Bienvenido");
+        
+        int res;
         do {
             System.out.println("\n1.Añadir disco\n2. Quitar disco\n3.Mostrar todos los discos\n4. Vender \n5. Lista de todas las ventas \n6. Comprar disco \n7. Salir");
-            int res = input.nextInt();
+             res = input.nextInt();
             
             switch (res) {
                 case 1:
@@ -66,11 +68,14 @@ public class main {
                 case 6:
                     tienda.compra(stock, input);
                 break;
+                case 7:
+                System.out.println("Saliendo...");
+                break;
                 default:
                     throw new AssertionError();
             }
             
-        } while(true);
+        } while(res != 7);
     
     }
 
