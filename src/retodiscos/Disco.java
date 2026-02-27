@@ -74,7 +74,6 @@ public class Disco {
         return contadorDiscos;
     }
     
-    
     public void eliminarDisco (ArrayList<Disco> stock, Scanner input) {
     input.nextLine();
 

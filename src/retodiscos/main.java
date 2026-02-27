@@ -71,7 +71,7 @@ public class main {
     
     }
 
-    private static void rellenarStock() {
+    public static void rellenarStock() {
         stock.add(new Disco("Thriller", "Michael Jackson", "USA", 1200.50, "Pop", 10, "Epic"));
         stock.add(new Disco("Back in Black", "AC/DC", "Australia", 950.30, "Rock", 5, "Atlantic"));
         stock.add(new Disco("The Dark Side of the Moon", "Pink Floyd", "UK", 1100.00, "Progressive Rock", 8, "Harvest"));
