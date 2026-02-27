@@ -55,11 +55,7 @@ public class main {
                     disco.eliminarDisco(stock, input);
                     break;
                 case 3:
-                    System.out.println("Mostrar");
-                    
-                    for(int i = 0; i < stock.size(); i++) {
-                        System.out.println(stock.get(i).toString());
-                    }
+                        tienda.consultarDiscos(stock);
                     break;
                 case 4:
                     tienda.venta(stock, input);
