@@ -1,6 +1,7 @@
 package retodiscos;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Disco {
 
@@ -71,6 +72,27 @@ public class Disco {
 
     public static int getContadorDiscos() {
         return contadorDiscos;
+    }
+    
+    
+    public void eliminarDisco (ArrayList<Disco> stock, Scanner input) {
+    input.nextLine();
+
+
+    System.out.println("Coloca el nombre del disco: ");
+    String identificadorNombre = input.nextLine();
+    System.out.println("Coloca el autor: ");
+    String identificadorAutor = input.nextLine();
+
+
+    for (int i = 0; i < stock.size(); i++) {
+        if (identificadorNombre.equalsIgnoreCase(stock.get(i).getTitulo())
+                && identificadorAutor.equalsIgnoreCase(stock.get(i).getAutor())) {
+            stock.remove(i);
+        }
+    }
+
+        
     }
     
     @Override

@@ -21,7 +21,7 @@ public class main {
         int opc;
         System.out.println("Bienvenido");
         do {
-            System.out.println("\n1.Añadir disco\n2. Quitar disco\n3.Mostrar todos los discos");
+            System.out.println("\n1.Añadir disco\n2. Quitar disco\n3.Mostrar todos los discos\n4. Vender \n5. Lista de todas las ventas \n6. Salir");
             int res = input.nextInt();
             
             switch (res) {
@@ -51,6 +51,9 @@ public class main {
                     tienda.addDisco(nuevoDisco);
                     System.out.println("Has creado el disco " + nombre + " y lo has añadido al stock");
                     break;
+                case 2:
+                    disco.eliminarDisco(stock, input);
+                    break;
                 case 3:
                     System.out.println("Mostrar");
                     
@@ -58,6 +61,12 @@ public class main {
                         System.out.println(stock.get(i).toString());
                     }
                     break;
+                case 4:
+                    tienda.venta(stock, input);
+                break;
+                case 5:
+                    tienda.listaVentas();
+                break;
                 default:
                     throw new AssertionError();
             }

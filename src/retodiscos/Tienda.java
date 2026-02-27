@@ -11,6 +11,9 @@ public class Tienda {
     private double saldo = 0;
     private double beneficio;
     static Scanner entrada = new Scanner(System.in);
+    private ArrayList<Cliente> ventas = new ArrayList<>();
+    
+    Disco disco = new Disco();
 
     public void addDisco(Disco disco) {
         main.stock.add(disco);
@@ -101,12 +104,36 @@ public class Tienda {
     public void setBeneficio(double beneficio) {
         this.beneficio = beneficio;
     }
-
-    public static void main(String[] args) {
-        main.rellenarStock();
-
-        Tienda tienda = new Tienda();
-        Disco disco = new Disco();
-        tienda.consultarDiscos(stock);
+    
+        public void venta (ArrayList<Disco> stock, Scanner input) {
+        boolean isNew = false;
+        
+        System.out.println("Es un cliente Nuevo S/N: ");
+        String clienteNuevo = input.next();
+        if (clienteNuevo.equalsIgnoreCase("Si")) {
+            isNew = true;
+        }
+        
+        System.out.println("Ingrese el DNI: ");
+        String dni = input.next();
+        
+        System.out.println("Ingrese el nombre del cliente: ");
+        String nombre = input.next();
+        
+        System.out.println("Ingrese el apellido del cliente: ");
+        String apellido = input.next();
+        
+        System.out.println("Ingrese el correo electronico: ");
+        String correo = input.next();
+        
+        ventas.add(new Cliente(correo, isNew, nombre, apellido, dni));
+        disco.eliminarDisco(stock, input);
+    }
+        
+    public void listaVentas () {
+        System.out.println("Lista de ventas: ");
+        for (int i = 0; i < ventas.size(); i++) {
+            System.out.println(ventas.get(i).toString());
+        }
     }
 }
