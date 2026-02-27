@@ -95,9 +95,17 @@ public class Disco {
         
     }
     
-    @Override
-    public String toString() {
-        return "titulo=" + titulo + ", autor=" + autor + ", discografica=" + discografica + ", precio=" + precio + ", genero=" + genero + ", numCanciones=" + numCanciones + ", formato=" + formato + ", antiguoPropietario=" + antiguoPropietario + '}';
-    }
+       @Override
+public String toString() {
+    return  "\n---------------------------------- ALBUM ----------------------------------\n" +
+            "Titulo:        " + titulo + "\n" +
+            "Autor:         " + autor + "\n" +
+            "Discografica:  " + discografica + "\n" +
+            "Precio:        " + precio + " €\n" +
+            "Genero:        " + genero + "\n" +
+            "Canciones:     " + numCanciones + "\n" +
+            "Formato:       " + formato + "\n" +
+            "---------------------------------------------------------------------------\n";
+}
 
 }
