@@ -21,7 +21,7 @@ public class main {
         int opc;
         System.out.println("Bienvenido");
         do {
-            System.out.println("\n1.Añadir disco\n2. Quitar disco\n3.Mostrar todos los discos\n4. Vender \n5. Lista de todas las ventas \n6. Salir");
+            System.out.println("\n1.Añadir disco\n2. Quitar disco\n3.Mostrar todos los discos\n4. Vender \n5. Lista de todas las ventas \n6. Comprar disco \n7. Salir");
             int res = input.nextInt();
             
             switch (res) {
@@ -62,6 +62,9 @@ public class main {
                 break;
                 case 5:
                     tienda.listaVentas();
+                break;
+                case 6:
+                    tienda.compra(stock, input);
                 break;
                 default:
                     throw new AssertionError();
