@@ -3,31 +3,49 @@ package retodiscos;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Clase principal del programa.
+ * 
+ * Gestiona la ejecución de la aplicación de la tienda de discos.
+ * Desde aquí se inicializa el stock, se muestra el menú principal
+ * y se controlan las opciones elegidas por el usuario.
+ */
 public class main {
-
-    static int cont;
+    
+     /** Contador genérico (no utilizado actualmente) */
     static public ArrayList<Disco> stock = new ArrayList<>();
+    
+     /** Lista que almacena los empleados de la tienda */
     static public ArrayList<Empleado> empleados= new ArrayList<>();
+    
+     /** Scanner para la entrada de datos por teclado */
     static Scanner input = new Scanner(System.in);
-    
-    
 
+     /**
+     * Método principal del programa.
+     * 
+     * Inicializa el stock de discos, crea los objetos necesarios
+     * y muestra un menú interactivo para que el usuario gestione
+     * la tienda (añadir, eliminar, vender, comprar discos, etc.).
+     *
+     * @param args argumentos de línea de comandos (no utilizados)
+     */
     public static void main(String[] args) {   
         rellenarStock();
         
         Tienda tienda = new Tienda();
         Disco disco = new Disco();
-        // Disco disco = new Disco("Titulo 1", "Artista 1", "Ciudad 1", 101.0, "Genero 1", 1, "Sello 1");
         
-        int opc;
         System.out.println("Bienvenido");
         
+        // Menú principal del programa
         int res;
         do {
             System.out.println("\n1.Añadir disco\n2. Quitar disco\n3.Mostrar todos los discos\n4. Vender \n5. Lista de todas las ventas \n6. Comprar disco \n7. Salir");
              res = input.nextInt();
             
             switch (res) {
+                 // Añadir un nuevo disco al stock
                 case 1:
                     System.out.println("Nombre del disco: ");
                     String nombre = input.next();
@@ -53,22 +71,28 @@ public class main {
                     Disco nuevoDisco = new Disco(nombre, artista, discogrfica, precio, genero, numCanciones, formato);
                     tienda.addDisco(nuevoDisco);
                     System.out.println("Has creado el disco " + nombre + " y lo has añadido al stock");
-                    break;
+                break;
+                 // Eliminar un disco del stock    
                 case 2:
                     disco.eliminarDisco(stock, input);
-                    break;
+                break;
+                // Mostrar todos los discos disponibles    
                 case 3:
                         tienda.consultarDiscos(stock);
-                    break;
+                break;
+                // Realizar una venta
                 case 4:
                     tienda.venta(stock, input);
                 break;
+                // Mostrar la lista de ventas realizadas
                 case 5:
                     tienda.listaVentas();
                 break;
+                // Comprar discos (reponer stock)
                 case 6:
-                    tienda.compra(stock, input);
+                    tienda.compra(stock, empleados, input);
                 break;
+                // Salir del programa
                 case 7:
                 System.out.println("Saliendo...");
                 break;
@@ -80,6 +104,13 @@ public class main {
     
     }
 
+     /**
+     * Rellena el stock inicial de la tienda con una lista de discos
+     * predefinidos.
+     * 
+     * Este método se ejecuta al iniciar el programa para simular
+     * una tienda con productos disponibles desde el principio.
+     */
     public static void rellenarStock() {
         stock.add(new Disco("Thriller", "Michael Jackson", "USA", 1200.50, "Pop", 10, "Epic"));
         stock.add(new Disco("Back in Black", "AC/DC", "Australia", 950.30, "Rock", 5, "Atlantic"));
