@@ -11,9 +11,9 @@ import java.util.Scanner;
  */
 
 public class Disco {
-
+    private int contador;
     /** Contador general de discos creados */
-    private static int contador = 0;
+    private int insertarNumDiscos = 0;
     /** Título del disco */
     private String titulo;
     /** Autor o artista del disco */
@@ -42,6 +42,7 @@ public class Disco {
     /**
      * Constructor con todos los datos básicos del disco.
      *
+     * @param insertarNumDiscos
      * @param titulo título del disco
      * @param autor autor o artista
      * @param discografica discográfica del disco
@@ -50,7 +51,8 @@ public class Disco {
      * @param numCanciones número de canciones
      * @param formato formato del disco
      */
-    public Disco(String titulo, String autor, String discografica, double precio, String genero, int numCanciones, String formato) {
+    public Disco(int insertarNumDiscos, String titulo, String autor, String discografica, double precio, String genero, int numCanciones, String formato) {
+        this.insertarNumDiscos = insertarNumDiscos;
         this.titulo = titulo;
         this.autor = autor;
         this.discografica = discografica;
@@ -58,7 +60,6 @@ public class Disco {
         this.genero = genero;
         this.numCanciones = numCanciones;
         this.formato = formato;
-        contador++;
     }
     
     /**
@@ -210,6 +211,7 @@ public class Disco {
     @Override
     public String toString() {
         return  "\n---------------------------------- ALBUM ----------------------------------\n" +
+            "Numero de discos: " + numCanciones + "\n" +   
             "Titulo:        " + titulo + "\n" +
             "Autor:         " + autor + "\n" +
             "Discografica:  " + discografica + "\n" +

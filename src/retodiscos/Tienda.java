@@ -2,7 +2,6 @@ package retodiscos;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import static retodiscos.main.stock;
 
 /**
  * Clase que representa una tienda de discos.
