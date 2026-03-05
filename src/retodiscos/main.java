@@ -41,7 +41,7 @@ public class main {
         // Menú principal del programa
         int res;
         do {
-            System.out.println("\n1.Añadir disco\n2. Quitar disco\n3.Mostrar todos los discos\n4. Vender \n5. Lista de todas las ventas \n6. Comprar disco \n7. Salir");
+            System.out.println("\n1. Anadir disco\n2. Quitar disco\n3. Mostrar todos los discos\n4. Vender \n5. Lista de todas las ventas \n6. Comprar disco \n7. Salir");
              res = input.nextInt();
             
             switch (res) {

@@ -10,7 +10,7 @@ public class Empleado extends Persona {
     /** Sueldo del empleado */
     private double sueldo;
     /** Lista de empleados gestionados por esta instancia */
-    private ArrayList<Empleado> empleados= new ArrayList<>();
+    final private ArrayList<Empleado> empleados = new ArrayList<>();
     /**
      * Constructor de la clase Empleado con todos los datos.
      *
@@ -81,7 +81,7 @@ public class Empleado extends Persona {
         String dni = input.next();
         
         for (int i = 0; i < empleados.size(); i++) {
-            if (dni == empleados.get(i).getDni()) {
+            if (dni.equalsIgnoreCase(empleados.get(i).getDni())) {
                 this.sueldo = sueldo;
             }
         }
@@ -95,7 +95,7 @@ public class Empleado extends Persona {
      */
     static public Empleado buscarEmpleado (String dni, ArrayList<Empleado> empleados) {
         for (int i = 0; i < empleados.size(); i++) {
-            if (dni == empleados.get(i).getDni()) {
+            if (dni.equalsIgnoreCase(empleados.get(i).getDni())) {
                 return empleados.get(i);
             }
         }
@@ -112,7 +112,7 @@ public class Empleado extends Persona {
         int res;
         
         do {    
-            System.out.println("Bienvenido al menu gestionar\n 1. Ingresar nuevo cliente\n2. Quitar empleado\n3. Asignar sueldo");
+            System.out.println("Bienvenido al menu gestionar\n 1. Ingresar nuevo empleado\n2. Quitar empleado\n3. Asignar sueldo");
             res = input.nextInt();
             
             switch (res) {
