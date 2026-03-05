@@ -109,8 +109,8 @@ public class Tienda {
         
         for (int i = 0; i < main.stock.size(); i++) {
             if (main.stock.get(i).getTitulo().contains(res)) {
-                falloAlBuscar = false;
                 System.out.println("\n" + main.stock.get(i));
+                falloAlBuscar = false;
             }
         }
         if (falloAlBuscar) System.out.println("El nombre no concide con ningun disco");
@@ -129,6 +129,7 @@ public class Tienda {
         for (int i = 0; i < main.stock.size(); i++) {
             if (main.stock.get(i).getAutor().contains(res)) {
                 System.out.println("\n" + main.stock.get(i));
+                falloAlBuscar = false;
             }
         }
         
