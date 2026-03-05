@@ -71,18 +71,7 @@ public class Tienda {
                 for (int i = 0; i < stock.size(); i++) {
                     System.out.println("\n" + stock.get(i));
                 }
-
-                System.out.println("\n¿Quieres buscar un disco por su nombre?");
-                System.out.println("1. Sí");
-                System.out.println("2. No");
-                int opcion = entrada.nextInt();
-                entrada.nextLine();
-
-                if (opcion == 1) {
-                    buscarPorTitulo();
-                }
                 break;
-
             case 2:
                 buscarPorTitulo();
                 break;
