@@ -25,6 +25,7 @@ public class Tienda {
     private ArrayList<Cliente> ventas = new ArrayList<>();
     /** Empleado asociado a la tienda */
     Empleado empleado = new Empleado(nombre, direccion, nombre, saldo);
+    Disco disco = new Disco();
     /**
      * Añade un disco al stock de la tienda.
      *
@@ -57,7 +58,8 @@ public class Tienda {
         System.out.println("\nActualmente hay " + Disco.getContador() + " discos\n");
         System.out.println("1. Ver todos los discos");
         System.out.println("2. Buscar un disco por nombre");
-        System.out.println("3. Salir");
+        System.out.println("3. Buscar por Autor");
+        System.out.println("4. Salir");
         System.out.print("Elige una opción: ");
 
         resList = entrada.nextInt();
@@ -76,35 +78,65 @@ public class Tienda {
                 int opcion = entrada.nextInt();
                 entrada.nextLine();
 
-                if (opcion == 2) {
-                    resList = 3; 
+                if (opcion == 1) {
+                    buscarPorTitulo();
                 }
                 break;
 
             case 2:
-                System.out.println("Introduce el título:");
-                String res = entrada.nextLine();
-
-                for (int i = 0; i < stock.size(); i++) {
-                    if (res.equalsIgnoreCase(stock.get(i).getTitulo())) {
-                        System.out.println("\n" + stock.get(i));
-                    }
-                }
-
-                System.out.println("\nPulsa Enter para volver al menú...");
-                entrada.nextLine();
+                buscarPorTitulo();
                 break;
-
+                
             case 3:
+                buscarPorAutor();
+                break;
+            case 4:
                 System.out.println("Saliendo...");
                 break;
 
             default:
                 System.out.println("Opción no válida.");
-        }
+            }
 
-    } while (resList != 3);
-}
+        } while (resList != 4);
+    }
+    
+    public void buscarPorTitulo () {
+        System.out.println("Introduce el título:");
+        String res = entrada.next();
+        
+        boolean falloAlBuscar = true;
+        
+        for (int i = 0; i < main.stock.size(); i++) {
+            if (main.stock.get(i).getTitulo().contains(res)) {
+                falloAlBuscar = false;
+                System.out.println("\n" + main.stock.get(i));
+            }
+        }
+        if (falloAlBuscar) System.out.println("El nombre no concide con ningun disco");
+
+        System.out.println("\nPulsa Enter para volver al menú...");
+        main.input.nextLine();
+    }
+    
+    
+    public void buscarPorAutor () {
+        System.out.println("Introduce el Autor:");
+        String res = entrada.nextLine();
+        
+        boolean falloAlBuscar = true;
+        
+        for (int i = 0; i < main.stock.size(); i++) {
+            if (main.stock.get(i).getAutor().contains(res)) {
+                System.out.println("\n" + main.stock.get(i));
+            }
+        }
+        
+        if (falloAlBuscar) System.out.println("El autor no concide con ningun autor en nuestro Stock");
+        
+        System.out.println("\nPulsa Enter para volver al menú...");
+        main.input.nextLine();
+    }
     /**
      * Devuelve el nombre de la tienda.
      *

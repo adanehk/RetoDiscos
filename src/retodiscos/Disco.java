@@ -38,6 +38,7 @@ public class Disco {
     private Empleado empleado;
     
     
+    
     /**
      * Constructor con todos los datos básicos del disco.
      *
